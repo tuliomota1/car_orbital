@@ -12,15 +12,15 @@ from tabulate import tabulate
 from termcolor import colored
 
 def parseArgs():
-    parser = argparse.ArgumentParser(description='Script para facilitar visualização de caráter orbital e atomico a partir de outputs do VASP (PROCAR file).',
-									epilog= "Tulio.",
+    parser = argparse.ArgumentParser(description='Script para facilitar visualização de caráter orbital e atomico das bandas projetadas a partir de outputs do VASP (PROCAR file).',
+									epilog= "Codigo desenvolvido para facilitar a aplicação do método DFT-1/2 a partir do conhecimento do caráter das bandas.",
 									prog="carater_orbital.py")
     
-    parser.add_argument('-p', '--procar', type=str, default='PROCAR', help="PROCAR padrao do calculo DFT")
+    parser.add_argument('-p', '--procar', type=str, default='PROCAR', help="Arquivo PROCAR padrao do calculo DFT --> pode ser alterado")
     
-    parser.add_argument('-k', '--kpers', type=int, default=40, help="Ponto-k de escolha do usuario")
+    parser.add_argument('-k', '--kpers', type=int, default=1, help="Ponto-k de escolha do usuario")
     
-    parser.add_argument('-b', '--bands', type=int, default=52, help="Banda de escolha do usuario para a tabela de resultado")
+    parser.add_argument('-b', '--bands', type=int, default=2, help="Banda de escolha do usuario para a tabela de resultado")
     
     parser.add_argument('-c', '--graficc', type=int, default=0, help="Escolha a forma da matriz. Padrao é simples. Com -c 1 a matriz é colorida")
     
